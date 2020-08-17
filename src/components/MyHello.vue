@@ -6,7 +6,8 @@
 export default {
     methods: {
         onClick() {
-            console.log("-------")
+            console.log("-------");
+            this.$message("hello");
         }
     }
 }
