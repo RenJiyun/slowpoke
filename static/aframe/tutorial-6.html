@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <head>
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+      <!-- 引入环境组件 -->
+      <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+  </head>
+  <body>
+    <a-scene>
+      <!-- 放置资源合集 -->
+      <a-assets>
+        <img id="texture" src="img/138385_header3.jpg" />
+      </a-assets>
+
+      <!-- 添加纹理 -->
+      <a-box
+        src="img/138385_header3.jpg"
+        position="0 2 -7"
+        width="2"
+        height="1"
+        depth="1"
+        scale="1 2 2"
+        rotation="45 45 0"
+      ></a-box>
+
+      <!-- 添加动画效果 -->
+      <a-box
+        src="#texture"
+        position="0 5 -4"
+        width="2"
+        height="1"
+        depth="1"
+        scale="1 2 2"
+        rotation="45 45 45"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; startEvents: click"
+      >
+        <!-- 注册动画的触发事件 -->
+      </a-box>
+
+      <a-camera position="0 7 5">
+        <a-cursor color="red"></a-cursor>
+      </a-camera>
+
+      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+    </a-scene>
+
+    <script>
+      // 注册事件
+      let box1 = document.querySelectorAll("a-box")[1];
+      box1.addEventListener("mouseenter", () => {
+        box1.setAttribute("scale", {
+          x: 2,
+          y: 3,
+          z: 1
+        });
+      });
+    </script>
+  </body>
+</html>

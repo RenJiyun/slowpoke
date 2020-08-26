@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <head>
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+      <!-- 引入环境组件 -->
+      <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- 放置资源合集 -->
+      <a-assets>
+        <img id="texture" src="img/138385_header3.jpg" />
+      </a-assets>
+
+      <!-- 添加纹理 -->
+      <a-box src="img/138385_header3.jpg" position="0 2 -7" width="2" height="1" depth="1" scale="1 2 2" rotation="45 45 0"></a-box>
+
+      <!-- 添加纹理推荐的方式 -->
+      <a-box src="#texture" position="0 5 -4" width="2" height="1" depth="1" scale="1 2 2" rotation="45 45 0"></a-box>
+
+      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+    </a-scene>
+  </body>
+</html>
